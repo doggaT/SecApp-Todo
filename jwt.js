@@ -1,9 +1,11 @@
 const { sign, verify, decode } = require('jsonwebtoken');
+const logger = require('./logger');
+require('dotenv').config();
 
 const createToken = user => {
 	const accessToken = sign(
 		{ user: { id: user.id, username: user.name, email: user.email } },
-		'happybeescollectingcoins'
+		process.env.JWT_SECRET
 	);
 	return accessToken;
 };
@@ -18,14 +20,14 @@ const validateToken = (req, res, next) => {
 	}
 
 	try {
-		const validToken = verify(accessToken, 'happybeescollectingcoins');
+		const validToken = verify(accessToken, process.env.JWT_SECRET);
 
 		if (validToken) {
 			req.authenticated = true;
 			return next();
 		}
 	} catch (err) {
-		console.error(err);
+		logger.error(err.message);
 	}
 };
 

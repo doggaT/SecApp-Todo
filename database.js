@@ -20,7 +20,6 @@ let db = new sqlite3.Database(DBSOURCE, err => {
 				if (err) {
 					logger.error(err.message);
 				} else {
-					// SQL parameter binding to prevent SQL injection
 					let query = 'INSERT INTO role (name) VALUES (?)';
 					db.run(query, ['admin']);
 					db.run(query, ['user']);
@@ -44,7 +43,6 @@ let db = new sqlite3.Database(DBSOURCE, err => {
 				if (err) {
 					logger.error(err.message);
 				} else {
-					// SQL parameter binding to prevent SQL injection
 					let query = 'INSERT INTO user (name, email, password, role_id) VALUES (?,?,?,?)';
 					db.run(query, ['admin', 'admin@example.com', bcrypt.hash('admin123456', 8), 1]);
 					db.run(query, ['user', 'user@example.com', bcrypt.hash('user123456', 8), 2]);
@@ -64,7 +62,6 @@ let db = new sqlite3.Database(DBSOURCE, err => {
 				if (err) {
 					logger.error(err.message);
 				} else {
-					// SQL parameter binding to prevent SQL injection
 					let insertTask = 'INSERT INTO task (task_name, owner_id) VALUES (?,?)';
 					db.run(insertTask, ['Water plants', 1]);
 					db.run(insertTask, ['Boil Eggs', 2]);

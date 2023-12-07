@@ -3,9 +3,12 @@ const app = express();
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const logger = require('./logger');
+const session = require('express-session');
+require('dotenv').config();
 
 let bodyParser = require('body-parser');
 let path = require('path');
+const helmet = require('helmet');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -20,11 +23,41 @@ app.set('view engine', 'ejs');
 
 app.use(cors());
 
-const HTTP_PORT = 8000;
+app.use(
+	helmet({
+		contentSecurityPolicy: {
+			useDefaults: true,
+			directives: {
+				defaultSrc: ["'self'"],
+				styleSrc: ["'self'"],
+				scriptSrc: ["'unsafe-inline'"],
+				scriptSrcAttr: ["'unsafe-inline'"],
+			},
+		},
+	})
+);
 
-app.listen(HTTP_PORT, () => {
-	logger.info(`Server running on port: ${HTTP_PORT}`);
+const sessionConfig = session({
+	secret: process.env.CSRFT_SESSION_SECRET,
+	keys: ['safekey'],
+	resave: false,
+	saveUninitialized: false,
+	cookie: {
+		maxAge: parseInt(process.env.CSRFT_EXPIRESIN),
+		sameSite: 'strict',
+		httpOnly: true,
+		domain: process.env.DOMAIN,
+		secure: true,
+	},
 });
+app.use(sessionConfig);
 
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+
+const domain = process.env.DOMAIN;
+const port = process.env.PORT;
+
+app.listen(port, () => {
+	logger.info(`Server running on port: ${domain}:${port}`);
+});

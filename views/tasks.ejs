@@ -13,12 +13,14 @@
 				<div class="hello">
 					<h5>Hello, <%=user.user.username%></h5>
 					<form action="/auth/logout" method="POST">
+						<input type="hidden" name="_csrf" value="<%=csrfToken%>" />
 						<input class="logout" type="submit" value="Logout" />
 					</form>
 				</div>
 				<% } %>
 				<form class="add-task" action="/tasks" method="POST">
-					<input type="text" name="task_name" id="task_name" />
+					<input type="text" name="task_name" id="task_name" required />
+					<input type="hidden" name="_csrf" value="<%=csrfToken%>" />
 					<input type="submit" value="Add Item" />
 				</form>
 				<ul class="tasks">
@@ -27,6 +29,7 @@
 						<%= task.task_name %>
 						<form action="/delete-task" method="POST">
 							<input type="hidden" name="task_id" value="<%=task.task_id%>" />
+							<input type="hidden" name="_csrf" value="<%=csrfToken%>" />
 							<input type="submit" class="remove-task" value="Delete" />
 						</form>
 					</li>

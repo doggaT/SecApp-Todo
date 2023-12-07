@@ -24,6 +24,7 @@ function loadSignupForm() {
                 <input type="password" name="password" id="password" />
                 <label for="passwordConfirm">Confirm Password</label>
                 <input type="password" name="passwordConfirm" id="passwordConfirm" />
+                <input type="hidden" name="_csrf" value="<%csrf_token%>">
                 <input type="submit" value="Sign Up" />
             </form>
             <div class="register-cta">
@@ -51,6 +52,7 @@ function loadLoginForm() {
                 <input type="email" name="email" id="email" />
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" />
+                <input type="hidden" name="_csrf" value="<%=csrfToken%>">
                 <input type="submit" value="Login" />
             </form>
             <div class="register-cta">

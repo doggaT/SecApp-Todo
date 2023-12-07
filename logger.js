@@ -27,7 +27,7 @@ const logger = pino(
 			censor: '<PII>',
 		},
 	},
-	pino.destination(`${__dirname}/app.log`)
+	pino.destination('./app.log')
 );
 
 module.exports = logger;
