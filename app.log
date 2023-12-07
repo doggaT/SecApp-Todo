@@ -1,0 +1,27 @@
+[07-12-2023 10:16:26] [32mINFO[39m (on MSI): [36mServer running on port: 8000[39m
+[07-12-2023 10:16:26] [32mINFO[39m (on MSI): [36mConnected to the SQLite database.[39m
+[07-12-2023 10:16:26] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table role already exists[39m
+[07-12-2023 10:16:26] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table task already exists[39m
+[07-12-2023 10:16:26] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table user already exists[39m
+[07-12-2023 10:17:41] [32mINFO[39m (on MSI): [36mServer running on port: 8000[39m
+[07-12-2023 10:17:41] [32mINFO[39m (on MSI): [36mConnected to the SQLite database.[39m
+[07-12-2023 10:17:41] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table role already exists[39m
+[07-12-2023 10:17:41] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table user already exists[39m
+[07-12-2023 10:17:41] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table task already exists[39m
+[07-12-2023 10:17:53] [32mINFO[39m (on MSI): [36mUnable to register new user: email[39m
+[07-12-2023 10:18:10] [32mINFO[39m (on MSI): [36mUnable to register new user: email[39m
+[07-12-2023 10:18:16] [32mINFO[39m (on MSI): [36mServer running on port: 8000[39m
+[07-12-2023 10:18:16] [32mINFO[39m (on MSI): [36mConnected to the SQLite database.[39m
+[07-12-2023 10:18:16] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table role already exists[39m
+[07-12-2023 10:18:16] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table user already exists[39m
+[07-12-2023 10:18:16] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table task already exists[39m
+[07-12-2023 10:18:29] [32mINFO[39m (on MSI): [36mServer running on port: 8000[39m
+[07-12-2023 10:18:29] [32mINFO[39m (on MSI): [36mConnected to the SQLite database.[39m
+[07-12-2023 10:18:29] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table role already exists[39m
+[07-12-2023 10:18:29] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table user already exists[39m
+[07-12-2023 10:18:29] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table task already exists[39m
+[07-12-2023 10:18:42] [32mINFO[39m (on MSI): [36mServer running on port: 8000[39m
+[07-12-2023 10:18:42] [32mINFO[39m (on MSI): [36mConnected to the SQLite database.[39m
+[07-12-2023 10:18:42] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table role already exists[39m
+[07-12-2023 10:18:42] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table user already exists[39m
+[07-12-2023 10:18:42] [33mWARN[39m (on MSI): [36mSQLITE_ERROR: table task already exists[39m
