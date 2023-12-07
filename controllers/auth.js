@@ -20,8 +20,8 @@ exports.signup = (req, res) => {
 		}
 
 		let hashedPassword = await bcrypt.hash(password, 8);
-		let query = 'INSERT INTO user (name, email, password) VALUES (?,?,?)';
-		db.run(query, [name, email, hashedPassword], (err, user) => {
+		let query = `INSERT INTO user (name, email, password) VALUES (${name},${email},${hashedPassword})`;
+		db.run(query, (err, user) => {
 			if (err) {
 				logger.error(err.message);
 			} else {
